@@ -1,64 +1,107 @@
-Iris Dataset Analysis Web App
 
-This project is a fully functional web application that performs an in-depth exploratory data analysis (EDA) of the classic Iris flower dataset. Built with a Python and Flask backend, the application dynamically generates and displays key statistical insights and visualizations, making the data easily understandable.
 
-About The Project
-The goal of this project is to demonstrate a complete data science workflow, from initial data analysis to deploying a user-friendly web application. The app provides an interactive interface to explore the Iris dataset's features, distributions, and relationships. The front end is designed to be clean, modern, and responsive, featuring a light/dark theme switcher for user comfort.
+# Iris Dataset Analysis Web App
 
-Features
-Descriptive Statistics: View a complete summary table of the dataset's numerical features (mean, std, min, max, etc.).
+A fully functional **web application** that performs in-depth **Exploratory Data Analysis (EDA)** on the classic **Iris flower dataset**.
+Built with **Python** and **Flask**, the app dynamically generates statistical insights and visualizations to make the data easily understandable.
 
-Species Distribution: See the count of each of the three Iris species.
+---
 
-Dynamic Visualizations:
+## **About the Project**
 
-Histograms: To understand the distribution of each feature.
+The goal of this project is to demonstrate a **complete data science workflow** — from initial dataset exploration to deploying a user-friendly web application.
 
-Box Plots: To compare feature distributions across the different species.
+The app provides an **interactive interface** for exploring the Iris dataset’s:
 
-Pair Plot: To visualize the relationships between all pairs of features, colored by species.
+* Features
+* Distributions
+* Relationships
 
-Responsive Design: The interface works seamlessly on desktop and mobile devices.
+The **frontend** is clean, modern, and responsive, featuring a **light/dark theme switcher** for better user experience.
 
-Theme Switcher: Toggle between a light and dark mode for comfortable viewing.
+---
 
-Tech Stack
-Backend: Python, Flask
+## **Features**
 
-Data Analysis: Pandas, Scikit-learn
+* **Descriptive Statistics**
+  Summary table with mean, standard deviation, min, max, etc.
 
-Data Visualization: Matplotlib, Seaborn
+* **Species Distribution**
+  Count of each Iris species.
 
-Frontend: HTML, Tailwind CSS, JavaScript
+* **Dynamic Visualizations**
 
-Deployment: Render, Gunicorn
+  * **Histograms**: Feature distribution.
+  * **Box Plots**: Compare feature values across species.
+  * **Pair Plot**: Relationships between all features, colored by species.
 
-Getting Started
-To get a local copy up and running, follow these simple steps.
+* **Responsive Design**
+  Works seamlessly on desktop and mobile devices.
 
-Prerequisites
-Python 3.9+
+* **Theme Switcher**
+  Light/dark mode toggle.
 
-pip
+---
 
-Installation
-Clone the repository:
+## **Tech Stack**
 
+**Backend:** Python, Flask
+**Data Analysis:** Pandas, Scikit-learn
+**Data Visualization:** Matplotlib, Seaborn
+**Frontend:** HTML, Tailwind CSS, JavaScript
+**Deployment:** Render, Gunicorn
+
+---
+
+## **Getting Started**
+
+### **Prerequisites**
+
+* Python **3.9+**
+* `pip` (Python package manager)
+
+---
+
+### **Installation**
+
+1️⃣ **Clone the Repository**
+
+```bash
 git clone https://github.com/shreyas277092004/iris-analysis-app.git
 cd iris-analysis-app
-Create and activate a virtual environment:
+```
 
-# For Windows
+2️⃣ **Create & Activate Virtual Environment**
+
+**For Windows:**
+
+```bash
 python -m venv venv
-.\venv\Scripts\activate
+venv\Scripts\activate
+```
 
-# For macOS/Linux
+**For macOS/Linux:**
+
+```bash
 python3 -m venv venv
 source venv/bin/activate
-Install the required packages:
+```
 
+3️⃣ **Install Dependencies**
+
+```bash
 pip install -r requirements.txt
-Run the application:
+```
 
+4️⃣ **Run the Application**
+
+```bash
 python app.py
-Open your browser and navigate to http://127.0.0.1:5000.
+```
+
+5️⃣ **Open in Browser**
+Visit:
+
+```
+http://127.0.0.1:5000
+```
