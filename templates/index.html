@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" class="">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iris Dataset Analysis</title>
+    
+    <!-- Tailwind CSS from CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lora:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Custom Stylesheet -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body class="bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-gray-200 transition-colors duration-300">
+
+    <!-- Theme switcher -->
+    <div class="absolute top-4 right-4">
+        <button id="theme-toggle" class="p-2 rounded-full text-gray-500 dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+            <svg id="theme-toggle-dark-icon" class="hidden h-6 w-6" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+            <svg id="theme-toggle-light-icon" class="hidden h-6 w-6" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 5.05a1 1 0 010 1.414l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 0zM3 11a1 1 0 100-2H2a1 1 0 100 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
+        </button>
+    </div>
+
+    <div class="container mx-auto p-4 sm:p-6 lg:p-8 max-w-5xl">
+        <header class="text-center mb-10">
+            <h1 class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white">Iris Dataset Analysis</h1>
+            <p class="text-lg text-gray-600 dark:text-gray-400 mt-2">An elegant exploration of the classic Iris flower dataset.</p>
+        </header>
+
+        <main class="space-y-12">
+            <!-- Data Overview Section -->
+            <section class="grid md:grid-cols-2 gap-8">
+                <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6">
+                    <h2 class="text-2xl font-semibold mb-4 text-gray-800 dark:text-white">Descriptive Statistics</h2>
+                    <div class="table-container text-sm">
+                        {{ descriptive_stats|safe }}
+                    </div>
+                </div>
+                <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6">
+                    <h2 class="text-2xl font-semibold mb-4 text-gray-800 dark:text-white">Species Distribution</h2>
+                     <div class="table-container text-sm">
+                        {{ species_distribution|safe }}
+                    </div>
+                </div>
+            </section>
+
+            <!-- Visualizations Section -->
+            <section class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6">
+                <h2 class="text-3xl font-semibold mb-6 text-center text-gray-800 dark:text-white">Data Visualizations</h2>
+                <div class="space-y-10">
+                    <div>
+                        <h3 class="text-xl font-medium mb-4 text-center">Feature Distributions</h3>
+                        <img src="{{ url_for('static', filename='histograms.png') }}" alt="Histograms" class="rounded-lg shadow-md w-full mx-auto">
+                    </div>
+                    <hr class="border-gray-200 dark:border-gray-700">
+                    <div>
+                        <h3 class="text-xl font-medium mb-4 text-center">Feature Comparison by Species</h3>
+                        <img src="{{ url_for('static', filename='boxplots.png') }}" alt="Box Plots" class="rounded-lg shadow-md w-full mx-auto">
+                    </div>
+                    <hr class="border-gray-200 dark:border-gray-700">
+                    <div>
+                        <h3 class="text-xl font-medium mb-4 text-center">Relationships Between Features</h3>
+                        <img src="{{ url_for('static', filename='pairplot.png') }}" alt="Pair Plot" class="rounded-lg shadow-md w-full mx-auto">
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="text-center mt-12 text-gray-500 dark:text-gray-400">
+            <p>Crafted for data exploration.</p>
+        </footer>
+    </div>
+    
+    <!-- Custom JavaScript -->
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
