@@ -43,9 +43,8 @@ pip
 Installation
 Clone the repository:
 
-git clone https://github.com/your-username/iris-analysis-app.git
+git clone https://github.com/shreyas277092004/iris-analysis-app.git
 cd iris-analysis-app
-
 Create and activate a virtual environment:
 
 # For Windows
@@ -55,13 +54,10 @@ python -m venv venv
 # For macOS/Linux
 python3 -m venv venv
 source venv/bin/activate
-
 Install the required packages:
 
 pip install -r requirements.txt
-
 Run the application:
 
 python app.py
-
 Open your browser and navigate to http://127.0.0.1:5000.
